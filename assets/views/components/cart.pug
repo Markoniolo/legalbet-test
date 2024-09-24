@@ -1,0 +1,42 @@
+-
+  const cartList = [
+    {name: {text: '+', mod: 'green'}, value: {text: '647', mod: 'green'}},
+    {name: {text: '=', mod: 'grey'}, value: {text: '29', mod: 'grey'}},
+    {name: {text: '—', mod: 'red'}, value: {text: '413', mod: 'red'}},
+    {name: {text: 'ROI<span>, %</span>', mod: 'thin'}, value: {text: '23,9%', mod: 'green'}},
+    {name: {text: 'Прибыль', mod: 'thin'}, value: {text: '+22 820', mod: 'green'}},
+  ]
+
+.cart
+  .cart__top
+    .cart__avatar
+      img.cart__avatar-icon(src=staticImg('avatar.png') alt='')
+      .cart__avatar-info
+        .cart__avatar-name Владимир Вуйтек
+        .cart__avatar-time!= '<span>Статистика за последние </span>30 дней'
+    ul.cart__list
+      each item in cartList
+        li.cart__item
+          .cart__item-name(class=item.name.mod)!= item.name.text
+          .cart__item-value(class=item.value.mod)!= item.value.text
+  .cart__area(data-element="cart-area")
+    .cart__area-inner
+      p.cart__text.
+        В Кубке страны команда Унаи Эмери бессовестно размялась на «Виктории» из Ла-Коруньи (8:0). При этом серьёзные
+        соперники: «Севилья», «Барселона» (даже кризисная) и «МЮ» (ещё более кризисный) — били «Вильярреал». ЛЧ не турнир
+        для Эмери. Он гроссмейстер убогой ЛЕ. Поэтому у «Аталанты» есть шансы. Ей необходимо играть лишь на победу.
+        Только выигрыш выводит её в плей-офф ЛЧ. А поражение в комплекте с победой «Янг Бойз» над «МЮ» оставляет
+        бергамасков без еврокубковой весны. Гасперини вполне по силам одолеть команду Эмери. «Аталанта» уже обыгрывала
+        недавно «Юве» и «Наполи». Поставлю на победу итальянского клуба.
+    button.cart__area-button(data-element="cart-area-button")
+  .cart__bottom
+    .cart__expect
+      .cart__expect-name Прогноз
+      .cart__expect-value Штрафное время: тотал меньше 16,5
+    .cart__factor
+      img.cart__factor-icon(src=staticImg('factor.svg') alt='')
+      .cart__factor-box
+        .cart__factor-name Коэффициент
+        .cart__factor-name.cart__factor-name_mob Кэф
+        .cart__factor-value 3.20
+    button.cart__button.btn-blue Сделать ставку
